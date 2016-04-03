@@ -1,0 +1,24 @@
+[application-server]
+192.168.33.10
+ubuntu-server db_host=mysql01
+
+[mysql-db-server]
+mysql1
+mysql2
+
+[oracle-db-server]
+db-a.oracle.company.com
+db-b.oracle.company.com
+
+[database-server:children]
+mysql-db-server
+oracle-db-server
+
+[application-server:vars]
+message="Welcome"
+
+[database-server:vars]
+message="Hello World!"
+
+
+
